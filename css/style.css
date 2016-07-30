@@ -1,6 +1,45 @@
-.container  {
+.container {
   margin-right: 0px;
   margin-left: 0px;
   padding-right: 0px;
   padding-left: 0px;
+}
+#ai_pic {
+  height: 200px;
+  width: 200px;
+}
+.bubble {
+  position: relative;
+  width: 250px;
+  height: 120px;
+  padding: 10px;
+  background: #FFFFFF;
+  -webkit-border-radius: 17px;
+  -moz-border-radius: 17px;
+  border-radius: 17px;
+  border: #92D2FF solid 7px;
+}
+.bubble:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 10px 23px 10px 0;
+  border-color: transparent #FFFFFF;
+  display: block;
+  width: 0;
+  z-index: 1;
+  left: -23px;
+  top: 29px;
+}
+.bubble:before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 16px 29px 16px 0;
+  border-color: transparent #92D2FF;
+  display: block;
+  width: 0;
+  z-index: 0;
+  left: -36px;
+  top: 23px;
 }

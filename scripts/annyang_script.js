@@ -11,24 +11,22 @@ annyang.debug();
 console.log("annyang_script is loaded");
 // Define sample command
 var commands = {
-    'hello': function() {
-        console.log('world');
-    },
-    // default option (let apiai handles)
-    '*text': function(text) {
+  'hello': function() {
+    console.log('world');
+  },
+  // default option (let apiai handles)
+  '*text': function(text) {
 
-        var request = app.textRequest(text);
+    var request = app.textRequest(text);
 
-        request.on('response', function(response) {
-            console.log(response);
-        });
+    request.on('response', genRespHandler);
 
-        request.on('error', function(error) {
-            console.log(error);
-        });
+    request.on('error', function(error) {
+      console.log(error);
+    });
 
-        request.end()
-    }
+    request.end()
+  }
 };
 // Add our commands to annyang
 annyang.addCommands(commands);
