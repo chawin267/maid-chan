@@ -7,11 +7,12 @@
 #ai_pic {
   height: 200px;
   width: 200px;
+  -webkit-app-region: drag;
 }
 .bubble {
   position: relative;
-  width: 250px;
-  height: 120px;
+  width: 200px;
+  height: 100px;
   padding: 10px;
   background: #FFFFFF;
   -webkit-border-radius: 17px;

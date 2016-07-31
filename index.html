@@ -10,21 +10,31 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
-        <img id="ai_pic" src="images/temp.gif" style="-webkit-app-region: drag" />
+      <div class="col-xs-6">
+        <img id="ai_pic" src="images/temp.gif" />
       </div>
-      <div class="col-md-6">
-        <div class="bubble">
+      <div class="col-xs-6">
+        <div id="speech_bubble" class="bubble" contenteditable="true">
           Placeholder for dialoge box
         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="input-group" style="margin-top: 20px; width: 200px;">
+          <input id="input_box" type="text" class="form-control" placeholder="Onii-chan, talk to me!">
+          <span class="input-group-btn">
+            <button id="input_btn" class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+            </button>
+          </span>
+        </div>
+        <!-- /input-group -->
       </div>
     </div>
   </div>
 
 
-
-  <script src="scripts/respHandler.js"></script>
-  <script src="scripts/annyang_script.js"></script>
   <script>
     window.$ = window.jQuery = require('./scripts/jquery-2.2.4.min.js');
   </script>
@@ -35,6 +45,8 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <script src="scripts/annyang_script.js"></script>
+  <script src="scripts/respHandler.js"></script>
 </body>
 
 <script>

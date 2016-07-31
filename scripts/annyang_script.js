@@ -25,7 +25,7 @@ var commands = {
       console.log(error);
     });
 
-    request.end()
+    request.end();
   }
 };
 // Add our commands to annyang
