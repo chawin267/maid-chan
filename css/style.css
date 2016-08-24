@@ -12,7 +12,7 @@
 .bubble {
   position: relative;
   width: 200px;
-  height: 100px;
+  min-height: 100px;
   padding: 10px;
   background: #FFFFFF;
   -webkit-border-radius: 17px;

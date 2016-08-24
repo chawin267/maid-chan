@@ -14,7 +14,7 @@ var commands = {
   'hello': function() {
     console.log('world');
   },
-  // default option (let apiai handles)
+  // Default option (let apiai handles)
   '*text': function(text) {
 
     var request = app.textRequest(text);

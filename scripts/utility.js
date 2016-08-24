@@ -1,4 +1,7 @@
-// handle case empty fulfillment
+// Keeps timeout ID used to write text
+var timeoutId;
+
+// Handles case empty fulfillment
 function noFulfill() {
 
   var delay = 5000;
@@ -14,14 +17,17 @@ function noFulfill() {
   );
 }
 
-// write text to bubble with delay
+// Writes text to bubble with delay
 function writeText(text) {
 
   var delay = 30;
   var elem = $('#speech_bubble');
 
-  // clear text in the bubble
-  elem.text("");
+  // Stops previous text being written
+  clearTimeout(timeoutId);
+
+  // Clear text in the bubble
+  elem.text('');
 
   //text- string
   //elem - jQuery element where text is to be attached
@@ -31,12 +37,12 @@ function writeText(text) {
       elem = $('body');
     }
     if (!delay) {
-      delay = 300;
+      delay = 30;
     }
     if (text.length > 0) {
       //append first character
       elem.append(text[0]);
-      setTimeout(
+      timeoutId = setTimeout(
         function() {
           //Slice text by 1 character and call function again
           addTextByDelay(text.slice(1), elem, delay);
