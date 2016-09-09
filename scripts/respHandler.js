@@ -23,12 +23,23 @@ $('#input_box').bind('keyup', function(e) {
 
 /* ---------------------------------------------------------------------------------------------- */
 
-// write general response
-function genRespHandler(response) {
+function handleResp(response) {
   // DEBUG
-  console.log('In genRespHandler()');
   console.log(response);
-  console.log(response.result.fulfillment.speech);
+  console.log(response.result.action);
+
+  var action = response.result.action;
+  switch (action) {
+    case '':
+
+      break;
+    default:
+      handleDefResp(response);
+  }
+}
+
+// write general response
+function handleDefResp(response) {
 
   var fulfillment = response.result.fulfillment.speech;
 

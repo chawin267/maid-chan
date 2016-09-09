@@ -19,7 +19,7 @@ var commands = {
 
     var request = app.textRequest(text);
 
-    request.on('response', genRespHandler);
+    request.on('response', handleResp);
 
     request.on('error', function(error) {
       console.log(error);
