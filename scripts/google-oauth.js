@@ -1,5 +1,6 @@
+const {app} = require('electron');
 
-const ego = require('./scripts/google-oauth-util.js');
+const ego = require('./google-oauth-util.js');
 
 const auth = ego();
 const preventQuit = e => e.preventDefault();
