@@ -4,7 +4,7 @@ APIAI_TOKEN = '0fd4021de2954421b6570c089d9a39c6';
 const annyang = require('annyang');
 // Require api.ai
 const apiai = require('apiai');
-var app = apiai(APIAI_TOKEN);
+var aiapp = apiai(APIAI_TOKEN);
 
 // Turn on debug messages
 annyang.debug();
@@ -17,7 +17,7 @@ var commands = {
   // Default option (let apiai handles)
   '*text': function(text) {
 
-    var request = app.textRequest(text);
+    var request = aiapp.textRequest(text);
 
     request.on('response', handleResp);
 

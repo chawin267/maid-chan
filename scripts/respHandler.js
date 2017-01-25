@@ -1,12 +1,14 @@
+require('./scripts/google-oauth.js');
+
 // use text input to create request
 function submitText() {
   var text = $('#input_box').val();
   $('#input_box').val('');
   if (text === '') return;
 
-  var request = app.textRequest(text);
+  var request = aiapp.textRequest(text);
 
-  request.on('response', genRespHandler);
+  request.on('response', handleResp);
 
   request.on('error', function(error) {
     console.log(error);
@@ -30,8 +32,11 @@ function handleResp(response) {
 
   var action = response.result.action;
   switch (action) {
-    case '':
-
+    case 'email.read':
+      handleEmailCheck(response);
+      break;
+    case 'email.check':
+      handleEmailCheck(response);
       break;
     default:
       handleDefResp(response);
